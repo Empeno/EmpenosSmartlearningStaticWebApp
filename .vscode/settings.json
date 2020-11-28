@@ -1,5 +1,15 @@
 {
     "staticWebApps.appSubpath": "/",
-    "staticWebApps.apiSubpath": "",
-    "staticWebApps.appArtifactSubpath": ""
+    "staticWebApps.apiSubpath": "api",
+    "staticWebApps.appArtifactSubpath": "",
+    "azureFunctions.deploySubpath": "api/bin/Release/netcoreapp3.1/publish",
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~3",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.preDeployTask": "publish",
+    "liveServer.settings.proxy": {
+        "enable": true,
+        "baseUri": "/api",
+        "proxyUri": "http://127.0.0.1:7071/api"
+     }
 }

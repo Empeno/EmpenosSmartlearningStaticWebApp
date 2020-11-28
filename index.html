@@ -10,9 +10,18 @@
 
 <body>
   <main>
-    <h1>Vanilla JavaScript App</h1>
+     <h1>Vanilla JavaScript App</h1>
+    <p>Loading content from the API: <b id="name">...</b></p>
     <img src="https://smartlearningstaticwebap.blob.core.windows.net/public-images/trees.jpg" />
+    
   </main>
+
+  <script>
+    (async function() {
+      let { name } = await( await fetch(`/api/HttpTriggerCSharp1`)).json();
+      document.querySelector('#name').textContent = name;
+    }())
+  </script>
 </body>
 
 </html>
