@@ -5,16 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title>Empeños SmartLearning Static Web App</title>
+  <script src="js/navigation.js" async></script>
 </head>
 
 <body>
-  <main>
+<nav id="mainNavigation"></nav>
+  
      <h1>Empeños SmartLearning Static Web App</h1>
     <p>Loading content from the API: <b id="name">...</b></p>
     <img src="https://smartlearningstaticwebap.blob.core.windows.net/public-images/trees.jpg" />
     
-  </main>
+  
 
   <script>
     (async function() {
@@ -22,6 +25,7 @@
       document.querySelector('#name').textContent = name;
     }())
   </script>
+  
 </body>
 
 </html>
