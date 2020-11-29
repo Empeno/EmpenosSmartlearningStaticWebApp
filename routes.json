@@ -1,10 +1,14 @@
 {
     "routes": [
-      
+        {
+            "route": "/What-is-azure-static-web-apps",
+            "serve": "/What-is-azure-static-web-apps.html",
+            "statusCode": 200
+          },
       {
         "route": "/test",
         "serve": "/test.html",
         "statusCode": 301
       }
     ]
-  }
+  } 
