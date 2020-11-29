@@ -1,7 +1,7 @@
 {
     "routes": [
         {
-            "route": "/What-is-azure-static-web-apps",
+            "route": "/Whatisazurestaticwebapps",
             "serve": "/What-is-azure-static-web-apps.html",
             "statusCode": 200
           },
