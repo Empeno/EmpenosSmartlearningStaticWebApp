@@ -25,20 +25,32 @@ function buildMainNavigation() {
   divNavBar.appendChild(divNavbarNav);
   
   
+  
+  buildNavItem("home", divNavbarNav);
+  buildNavItem("whatisazurestaticwebapps", divNavbarNav);
+  buildNavItem("queues", divNavbarNav);
+
+}
+
+
+function buildNavItem(navItemName, divNavbarNav){
   var linkHome = document.createElement('a');
   linkHome.classList.add('nav-link')
-  var linkText = document.createTextNode("Home");
-  linkHome.appendChild(linkText);
-  linkHome.title = "Home";
-  linkHome.href = "/";
-  divNavbarNav.appendChild(linkHome);
   
-  var linkStatic = document.createElement('a');
-  linkStatic.classList.add('nav-link')
-  var linkText2 = document.createTextNode("Static Web Apps");
-  linkStatic.appendChild(linkText2);
-  linkStatic.title = "Static";
-  linkStatic.href = "what-is-azure-static-web-apps";
-  divNavbarNav.appendChild(linkStatic);
+  var capitalizedNavItemName = navItemName.substring(0,1).toUpperCase() + navItemName.substring(1);
+  var linkText = document.createTextNode(capitalizedNavItemName);
+
+  linkHome.appendChild(linkText);
+  linkHome.title = navItemName;
+  if (navItemName === "home") {
+    linkHome.href = "/";
+  }
+  else if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+    linkHome.href = navItemName + ".html";
+  }
+  else {
+    linkHome.href = navItemName;
+  }
+  divNavbarNav.appendChild(linkHome);
 }
 
