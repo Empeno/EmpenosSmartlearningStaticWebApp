@@ -5,7 +5,7 @@ function addEmployee() {
   
     const employee = {
         firstName : firstNameTextbox.value.trim(),
-        lastName : 'Nielsen'
+        lastName : document.getElementById('surname').value.trim()
     }
   
     fetch(uri, {
