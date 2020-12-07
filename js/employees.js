@@ -1,6 +1,6 @@
-const uri = 'api/employees';
+const uri = 'api/addemployee';
 
-function addItem() {
+function addEmployee() {
     const addNameTextbox = document.getElementById('add-name');
   
     const item = {
@@ -9,8 +9,8 @@ function addItem() {
     };
 
     const employee = {
-        firstName = 'Bent',
-        lastName = 'Nielsen'
+        firstName : 'Bent',
+        lastName : 'Nielsen'
     }
   
     fetch(uri, {

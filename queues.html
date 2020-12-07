@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Azure Queues</title>
     <script src="js/navigation.js" async></script>
+    <script src="js/employees.js" async></script>
 </head>
 <body>
     <nav id="mainNavigation"></nav>
@@ -16,5 +17,11 @@
         En "message" i en Azure Queue kan være op til 64 KB i størrelse.<br />
         En queue kan indeholde millioner af beskeder op til den samlede kapacitetsgrænse for en storage account.<br />
         Køer bruges ofte til at skabe en backlog af software relaterede arbejdsopgaver, der skal behandles asynkront.</p>
+
+        <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addEmployee()">
+        <input type="text" id="add-name" placeholder="New to-do">
+        <input type="submit" value="Add">
+    </form>
 </body>
 </html>
