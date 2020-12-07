@@ -1,15 +1,10 @@
 const uri = 'api/addemployee';
 
 function addEmployee() {
-    const addNameTextbox = document.getElementById('add-name');
+    const firstNameTextbox = document.getElementById('firstName');
   
-    const item = {
-      isComplete: false,
-      name: addNameTextbox.value.trim()
-    };
-
     const employee = {
-        firstName : 'Bent',
+        firstName : firstNameTextbox.value.trim(),
         lastName : 'Nielsen'
     }
   
@@ -24,7 +19,7 @@ function addEmployee() {
       .then(response => response.json())
       .then(() => {
         getItems();
-        addNameTextbox.value = '';
+        firstNameTextbox.value = '';
       })
       .catch(error => console.error('Unable to add item.', error));
   }
