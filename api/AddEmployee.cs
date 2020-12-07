@@ -20,7 +20,7 @@ namespace EmpenosSmartLearningStaticWebApp
     {
         [FunctionName("AddEmployee")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req, ExecutionContext executionContext,
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req, ExecutionContext executionContext,
             ILogger log)
         {
             var config = new ConfigurationBuilder()
@@ -31,35 +31,16 @@ namespace EmpenosSmartLearningStaticWebApp
 
 
             string connectionString = config["StorageAccountConnectionString"];
-
-
-
-            // Create a unique name for the queue
             string queueName = "employeesqueue";
-
-
             QueueClient queueClient = new QueueClient(connectionString, queueName);
 
-
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            
             await queueClient.CreateAsync();
 
-            await queueClient.SendMessageAsync("First message");
-            await queueClient.SendMessageAsync("Second message");
+            await queueClient.SendMessageAsync(requestBody);
 
-            
-            log.LogInformation("C# HTTP trigger function processed a request.");
-
-            string name = req.Query["name"];
-
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
-            name = name ?? data?.name;
-
-            string responseMessage = string.IsNullOrEmpty(name)
-                ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {name}. This HTTP triggered function executed successfully.";
-
-            return new OkObjectResult(responseMessage);
+            return new OkObjectResult(requestBody);
         }
     }
 }
