@@ -27,7 +27,7 @@ function buildMainNavigation() {
   
   
   buildNavItem("home", divNavbarNav);
-  buildNavItem("whatisazurestaticwebapps", divNavbarNav);
+  buildNavItem("staticwebapps", divNavbarNav);
   buildNavItem("queues", divNavbarNav);
 
 }
