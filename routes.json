@@ -1,10 +1,5 @@
 {
-    "routes": [
-        {
-            "route": "/Whatisazurestaticwebapps",
-            "serve": "/Whatisazurestaticwebapps.html",
-            "statusCode": 200
-          },
+    "routes": [        
       {
         "route": "/test",
         "serve": "/test.html",
