@@ -27,7 +27,7 @@ function buildMainNavigation() {
   
   
   buildNavItem("home", divNavbarNav);
-  buildNavItem("staticwebapps", divNavbarNav);
+  buildNavItem("static web apps", divNavbarNav);
   buildNavItem("queues", divNavbarNav);
 
 }
@@ -42,14 +42,18 @@ function buildNavItem(navItemName, divNavbarNav){
 
   linkHome.appendChild(linkText);
   linkHome.title = navItemName;
+
+  //\s is the regex for "whitespace", and g is the "global" flag, meaning match ALL \s (whitespaces).
+  var navitemurl = navItemName.replace(/\s/g, '');
+
   if (navItemName === "home") {
     linkHome.href = "/";
   }
   else if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
-    linkHome.href = navItemName + ".html";
+    linkHome.href = navitemurl + ".html";
   }
   else {
-    linkHome.href = navItemName;
+    linkHome.href = navitemurl;
   }
   divNavbarNav.appendChild(linkHome);
 }
