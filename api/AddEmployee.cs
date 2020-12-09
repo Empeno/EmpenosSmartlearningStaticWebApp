@@ -14,7 +14,7 @@ namespace EmpenosSmartLearningStaticWebApp
     {
         [FunctionName("AddEmployee")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req, ExecutionContext executionContext,
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req, ExecutionContext executionContext,
             ILogger log)
         {
             var config = new ConfigurationBuilder()
