@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -6,13 +5,8 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using Microsoft.Extensions.Configuration;
-using Azure;
 using Azure.Storage.Queues;
-using Azure.Storage.Queues.Models;
-using System;
-using System.Threading.Tasks;
 
 namespace EmpenosSmartLearningStaticWebApp
 {
@@ -35,12 +29,18 @@ namespace EmpenosSmartLearningStaticWebApp
             QueueClient queueClient = new QueueClient(connectionString, queueName);
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            
+
             await queueClient.CreateAsync();
 
-            await queueClient.SendMessageAsync(requestBody);
+            await queueClient.SendMessageAsync(Base64Encode(requestBody));
 
             return new OkObjectResult(requestBody);
+        }
+
+        public static string Base64Encode(string plainText)
+        {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            return System.Convert.ToBase64String(plainTextBytes);
         }
     }
 }

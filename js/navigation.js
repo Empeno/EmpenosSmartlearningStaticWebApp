@@ -29,6 +29,7 @@ function buildMainNavigation() {
   buildNavItem("home", divNavbarNav);
   buildNavItem("static web apps", divNavbarNav);
   buildNavItem("queues", divNavbarNav);
+  buildNavItem('Cognitive Services')
 
 }
 

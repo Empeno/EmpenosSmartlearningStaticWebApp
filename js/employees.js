@@ -18,8 +18,15 @@ function addEmployee() {
     })
       .then(response => response.json())
       .then(() => {
-        getItems();
+        getEmployees();
         firstNameTextbox.value = '';
       })
       .catch(error => console.error('Unable to add item.', error));
+  }
+
+  function getItems() {
+    fetch(uri)
+      .then(response => response.json())
+      .then(data => _displayItems(data))
+      .catch(error => console.error('Unable to get items.', error));
   }
