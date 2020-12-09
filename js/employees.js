@@ -1,4 +1,4 @@
-const uri = 'api/addemployee';
+const uri = '/api/addemployee';
 
 function addEmployee() {
     const firstNameTextbox = document.getElementById('firstName');
