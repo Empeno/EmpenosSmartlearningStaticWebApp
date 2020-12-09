@@ -14,7 +14,7 @@ function addMinifiedBootstrapCss() {
 
 function buildMainNavigation() {
   var navElement = document.getElementById("mainNavigation");
-  navElement.classList.add('navbar', 'navbar-expand-lg', 'navbar-light', 'bg-light');
+  navElement.classList.add('navbar', 'navbar-expand-lg', 'navbar-dark', 'bg-dark');
   
   var divNavBar = document.createElement("div"); 
   divNavBar.classList.add('collapse', 'navbar-collapse');
@@ -29,7 +29,7 @@ function buildMainNavigation() {
   buildNavItem("home", divNavbarNav);
   buildNavItem("static web apps", divNavbarNav);
   buildNavItem("queues", divNavbarNav);
-  buildNavItem('Cognitive Services')
+  buildNavItem('Cognitive Services', divNavbarNav);
 
 }
 
