@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/site.css">
+    <title>Computer Vision</title>
+    <script src="js/navigation.js" async></script>
+    <script src="js/computervision.js" async></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <nav id="mainNavigation"></nav>
+        <h1>Computer Vision</h1>
+        <p>
+            Azures Computer Vision-tjeneste giver dig adgang til avancerede algoritmer, der behandler billeder og
+            returnerer oplysninger baseret på de visuelle features, du er interesseret i.<br /><br />
+
+            For eksempel kan Computer Vision afgøre, om et billede indeholder voksenindhold, finde specifikke mærker
+            eller objekter eller finde menneskers ansigter.
+        </p>
+
+
+        <div class="row">
+            <div class="col-lg-6 order-lg-6">
+                <h1 class="display-4 pl-5">Image recognition</h1>
+                <p class="p-5">
+                    På faget som <b>Cloud</b> og <b>Udvikling af store systemer</b> kan du lære mere om image
+                    recognition.
+                </p>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <img src="https://smartlearningstaticwebap.blob.core.windows.net/public-images/robot.jpg"
+                    class="w-100" />
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="p-4">Prøv det her</h2>
+                <div class="p-4">
+                    <form action="javascript:void(0);" method="POST" onsubmit="analyzeImage()">
+                        <div class="form-group">
+                            <label for="imageUrlInput">Image URL</label>
+                            <input type="text" class="form-control" id="imageUrlInput" aria-describedby="emailHelp"
+                                placeholder="Tilføj url til et billede her">
+                            <small id="emailHelp" class="form-text text-muted">Sti til billede skal ende på .jpg eller
+                                .png</small>
+                        </div>
+                        <input type="submit" value="Analysér" class="btn btn-primary">
+                    </form>
+
+                    <div id="imageDescription"></div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div id="previewImageContainer"></div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>

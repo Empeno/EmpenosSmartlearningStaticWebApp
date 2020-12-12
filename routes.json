@@ -1,9 +1,8 @@
 {
     "routes": [        
       {
-        "route": "/test",
-        "serve": "/test.html",
-        "statusCode": 301
+        "route": "/computervision",
+        "serve": "/computervision.html"
       }
     ]
   } 
