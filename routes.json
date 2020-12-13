@@ -1,12 +1,5 @@
 {
     "routes": [        
-      {
-        "route": "/computervision",
-        "serve": "/computervision.html"
-      },
-      {
-        "route": "/cognitiveservices",
-        "serve": "/cognitiveservices.html"
-      }
+     
     ]
   } 
