@@ -45,7 +45,7 @@ function buildNavItem(navItemName, divNavbarNav){
   linkHome.title = navItemName;
 
   //\s is the regex for "whitespace", and g is the "global" flag, meaning match ALL \s (whitespaces).
-  var navitemurl = navItemName.replace(/\s/g, '');
+  var navitemurl = navItemName.toLowerCase().replace(/\s/g, '');
 
   if (navItemName === "home") {
     linkHome.href = "/";
