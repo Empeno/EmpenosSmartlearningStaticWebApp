@@ -5,8 +5,8 @@
         "serve": "/computervision.html"
       },
       {
-        "route": "/CognitiveServices",
-        "serve": "/CognitiveServices.html"
+        "route": "/cognitiveservices",
+        "serve": "/cognitiveservices.html"
       }
     ]
   } 
