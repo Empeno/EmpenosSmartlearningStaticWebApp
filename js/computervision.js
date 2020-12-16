@@ -2,6 +2,7 @@ const uri = 'https://empenossmartlearningfunctionapp.azurewebsites.net/api/Analy
 let todos = [];
 
 function analyzeImage() {
+    spinner.removeAttribute('hidden');
 
     var imageUrl = document.getElementById('imageUrlInput').value;
 
@@ -29,6 +30,7 @@ function analyzeImage() {
             return response.json()
         })
         .then(data => {
+            spinner.setAttribute('hidden', '');
             var imageDiv = document.getElementById('previewImageContainer');
             imageDiv.innerHTML = "";
 
